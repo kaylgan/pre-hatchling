@@ -1,0 +1,164 @@
+:root {
+	--key-height: 65px;
+	--key-width: 40px;
+	--top-radius: 6px;
+	--bottom-radius: 20px;
+	--sm-row-gap: 3px;
+	--lg-row-gap: calc(8*(var(--sm-row-gap)));
+	--tiny-col-gap: 2px;
+	--sm-col-gap: 10px;
+	--lg-col-gap: 20px;
+	--key-rowgap-key: calc(2*(var(--key-height)) + var(--sm-row-gap));
+	--left-keys-width: calc(4*(var(--key-width)) + 3*(var(--sm-col-gap)));
+	--right-keys-width: calc(5*(var(--key-width)) + 4*(var(--sm-col-gap)));
+	--half-keyboard-width: calc(4*(var(--key-width)) + 3*(var(--sm-col-gap)) + var(--lg-col-gap) + ((1/2)*(var(--key-width))));
+	--half-lower-width: calc(2*(var(--key-width)) + var(--tiny-col-gap) + ((1/2)*(var(--lg-col-gap))));
+	--lower-content: calc(2*(var(--key-width)) + var(--tiny-col-gap));
+	--lower-spacer: calc(var(--half-keyboard-width) - var(--half-lower-width));
+	--upper-keyboard-height: calc(2*(var(--key-height)) + var(sm-row-gap));
+	--keyboard-width: calc(5*(var(--key-width)) + 7*(var(--sm-col-gap)) + 2*(var(--lg-col-gap)));
+}
+
+#timer {
+	width: 150px;
+	height: 25px;
+	text-align: center;
+	line-height: 22px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	background-color: lightgreen;
+	cursor: pointer;
+	border-radius: 10px;
+	border-color: lightgreen;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 1px 4px 2px 1px gray;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+}
+
+#hard-timer {
+	width: 150px;
+	height: 25px;
+	text-align: center;
+	line-height: 22px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	background-color: firebrick;
+	cursor: pointer;
+	border-radius: 10px;
+	border-color: firebrick;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 1px 4px 2px 1px gray;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+}
+
+#instructions {
+	width: calc(2*(var(--keyboard-width)));
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: gray;
+}
+
+#display {
+	width: calc(2*(var(--keyboard-width)));
+	height: calc(6*48px);
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-color: gray;
+	border-left-color: white;
+	border-right-color: white;
+	border-width: 2px;
+	border-style: solid;
+}
+
+#display-text {
+	color: gray;
+	font-size: 48px;
+	margin: 10px;
+	/* text-align: center; */
+}
+
+.key {
+	width: var(--key-width);
+	height: var(--key-height);
+	background-color: black;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+	font-size: 36px;
+	line-height: var(--key-height);
+	border-radius: var(--top-radius);
+	box-shadow: 2px 2px 2px 2px gray;
+}
+
+.bottom {
+	border-radius: var(--top-radius) var(--top-radius) var(--bottom-radius) var(--bottom-radius);
+}
+
+.left-keys {
+	display: grid;
+	grid-template-columns: repeat(4, var(--key-width));
+	grid-column-gap: var(--sm-col-gap);
+	grid-row-gap: var(--sm-row-gap);
+}
+
+.middle-keys {
+	display: grid;
+	grid-template-columns: var(--key-width);
+	grid-row-gap: var(--sm-row-gap);
+}
+
+.right-keys {
+	display: grid;
+	grid-template-columns: repeat(5, var(--key-width));
+	grid-column-gap: var(--sm-col-gap);
+	grid-row-gap: var(--sm-row-gap);
+}
+
+.upper-keyboard {
+	display: grid;
+	grid-template-columns: var(--left-keys-width) var(--key-width) var(--right-keys-width);
+	grid-column-gap: var(--lg-col-gap);
+}
+
+.lower-keys {
+	display: grid;
+	grid-template-columns: repeat(2, var(--key-width));
+	grid-column-gap: var(--tiny-col-gap);
+}
+
+.lower-keyboard {
+	display: grid;
+	grid-template-columns: calc(var(--lower-spacer) - var(--lg-col-gap)) var(--lower-content) var(--lower-content) var(--lower-spacer);
+	grid-column-gap: var(--lg-col-gap);
+}
+
+.keyboard {
+	width: calc(2*var(--half-keyboard-width) + (1/2)*(var(--key-width) + var(--sm-col-gap)));
+	margin: 0 auto;
+	display: grid;
+	grid-template-rows: var(--upper-keyboard-height) var(--key-height);
+	grid-row-gap: var(--lg-row-gap);
+}
+
+.highlight {
+  box-shadow: 2px 2px 2px 2px white;
+  background-color: gray;
+}
+
+.text-highlight {
+	background-color: lightgreen;
+}
